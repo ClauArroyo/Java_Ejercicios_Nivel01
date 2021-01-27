@@ -34,13 +34,13 @@ public class EjerciciosNivel01_2021 {
     private String   quitaEspaciosEnBlanco(String cadena){
         //"Acaso hubo buhos aca"
         //Acasohubobuhosaca
-        String miPrima = "";
-        for (int i=0; i< cadena.length(); i++){
+        String auxiliar = "";
+         for (int i=0; i< cadena.length(); i++){
             if (cadena.charAt(i) != ' '){
-                miPrima = miPrima + cadena.charAt(i);
+                auxiliar = auxiliar + cadena.charAt(i);
             }
         }
-        return miPrima;
+        return auxiliar;
     }
     
     public boolean esPalindromo ( String frase ){
@@ -48,7 +48,7 @@ public class EjerciciosNivel01_2021 {
         //que de derecha a izquierda y si no devuelve faso
         
         //primera fase: quitar los espacios en blanco de la cadena
-        String auxilkiar = quitaEspaciosEnBlanco(frase);
+        String auxiliar2 = quitaEspaciosEnBlanco(frase);
         
         return false; //no es palindromo
     }
