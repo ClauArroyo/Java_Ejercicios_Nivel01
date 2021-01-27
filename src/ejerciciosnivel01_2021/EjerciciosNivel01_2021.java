@@ -28,13 +28,42 @@ public class EjerciciosNivel01_2021 {
     }
     
     /**
+     * 
+     * método para quitar los espacios en blanco a un String
+     */
+    private String   quitaEspaciosEnBlanco(String cadena){
+        //"Acaso hubo buhos aca"
+        //Acasohubobuhosaca
+        String miPrima = "";
+        for (int i=0; i< cadena.length(); i++){
+            if (cadena.charAt(i) != ' '){
+                miPrima = miPrima + cadena.charAt(i);
+            }
+        }
+        return miPrima;
+    }
+    
+    public boolean esPalindromo ( String frase ){
+        //este programa devuelve verdadero si la frase tiene los mismos caracteres de izquierda a derecha
+        //que de derecha a izquierda y si no devuelve faso
+        
+        //primera fase: quitar los espacios en blanco de la cadena
+        String auxilkiar = quitaEspaciosEnBlanco(frase);
+        
+        return false; //no es palindromo
+    }
+    
+    /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         EjerciciosNivel01_2021 ejercicio = new EjerciciosNivel01_2021();
         System.out.println("El máximo es: " + ejercicio.maximo(ejercicio.listaNumeros));
         
+        //segundo ejercicio: Palíndromo
         
+        String frase01 = "Acaso hubo buhohs aca";
+        System.out.println("palindromo: " + ejercicio.esPalindromo(frase01));
     }
     
 }
