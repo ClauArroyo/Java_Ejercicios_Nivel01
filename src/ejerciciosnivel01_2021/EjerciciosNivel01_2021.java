@@ -47,10 +47,30 @@ public class EjerciciosNivel01_2021 {
         //este programa devuelve verdadero si la frase tiene los mismos caracteres de izquierda a derecha
         //que de derecha a izquierda y si no devuelve faso
         
-        //primera fase: quitar los espacios en blanco de la cadena
-        String auxiliar2 = quitaEspaciosEnBlanco(frase);
+        //"Acaso hubo buhos aca"
+        //Acasohubobuhosaca
         
-        return false; //no es palindromo
+        //1º primera fase: quitar los espacios en blanco de la cadena
+        String auxiliar2 = quitaEspaciosEnBlanco(frase);
+        //2º Pasamos a minúsculas toda la frase
+        auxiliar2 = auxiliar2.toLowerCase();
+        //3º Voy a usar el método de los dos índices
+        int indiceIzquierdo = 0;
+        int indiceDerecho = auxiliar2.length() - 1;
+        
+        while (auxiliar2.charAt(indiceIzquierdo) == auxiliar2.charAt(indiceDerecho) 
+                && indiceIzquierdo <= indiceDerecho){
+            indiceIzquierdo++;
+            indiceDerecho--;
+        }
+        if(indiceIzquierdo < indiceDerecho){ //se ha salido antes de llegar al medio, luego no es palíndromo
+            
+            return false; //no son palíndromos
+        }
+        else{
+           return true; //si que es plaíndromo porque los índices se han cruzado 
+        }
+        
     }
     
     /**
@@ -62,8 +82,9 @@ public class EjerciciosNivel01_2021 {
         
         //segundo ejercicio: Palíndromo
         
-        String frase01 = "Acaso hubo buhohs aca";
-        System.out.println("palindromo: " + ejercicio.esPalindromo(frase01));
+        
+        System.out.println("palindromo: " + ejercicio.esPalindromo("Acaso hubo buhos aca"));
+        System.out.println("palindromo: " + ejercicio.esPalindromo("estonoes"));
     }
     
 }
