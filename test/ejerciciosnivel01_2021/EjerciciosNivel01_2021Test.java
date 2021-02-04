@@ -67,5 +67,44 @@ public class EjerciciosNivel01_2021Test {
         
     }
 
+    /**
+     * Test of esIsograma method, of class EjerciciosNivel01_2021.
+     */
+    @Test
+    public void testEsIsograma() {
+        System.out.println("esIsograma");
+        EjerciciosNivel01_2021 instance = new EjerciciosNivel01_2021();
+        assertEquals(true, instance.esIsograma("murcielago"));
+        assertEquals(false, instance.esIsograma("cocreta"));
+        assertEquals(false, instance.esIsograma("casa"));
+        assertEquals(false, instance.esIsograma("supercalifragilisticoespialidoso"));
+        assertEquals(false, instance.esIsograma("Cocreta"));
+        assertEquals(false, instance.esIsograma("isódroma"));
+        assertEquals(true, instance.esIsograma("pita"));
+        assertEquals(true, instance.esIsograma("MURCIELAGO"));
+        assertEquals(false, instance.esIsograma("COCRETA"));
+        assertEquals(true, instance.esIsograma("CETYS"));
+        assertEquals(true, instance.esIsograma("UFV"));
+
+        
+        
+      
+        
+        
+ 
+    }
+
+    /**
+     * Test of main method, of class EjerciciosNivel01_2021.
+     */
+    @Test
+    public void testMain() {
+        System.out.println("main");
+        String[] args = null;
+        EjerciciosNivel01_2021.main(args);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
     
 }

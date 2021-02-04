@@ -73,6 +73,22 @@ public class EjerciciosNivel01_2021 {
         
     }
     
+    public boolean esIsograma ( String palabra){
+        //Este método devuelve true si la palabra no tiene ninguna letra repetida
+        //y false si se repite alguna.
+        palabra = palabra.toUpperCase();
+        for (int i=0; i< palabra.length(); i++){
+            for (int j=i+1; j< palabra.length(); j++){
+                if( palabra.charAt(i) == palabra.charAt(j)){
+                    return false;
+                }
+            }
+        }
+        //Si ha recorrido los dos bucles sin salir en el return false,
+        //es porque la palabra no tiene letras repetidas
+        return true;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -85,6 +101,8 @@ public class EjerciciosNivel01_2021 {
         
         System.out.println("palindromo: " + ejercicio.esPalindromo("Acaso hubo buhos aca"));
         System.out.println("palindromo: " + ejercicio.esPalindromo("estonoes"));
+        System.out.println("isograma: " + ejercicio.esIsograma("murcielago"));
+        System.out.println("isograma: " + ejercicio.esIsograma("diccionario"));
     }
     
 }
