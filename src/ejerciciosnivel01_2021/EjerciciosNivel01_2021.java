@@ -36,7 +36,56 @@ public class EjerciciosNivel01_2021 {
         //Acasohubobuhosaca
         String auxiliar = "";
          for (int i=0; i< cadena.length(); i++){
-            if (cadena.charAt(i) != ' '){
+            if (cadena.charAt(i) != ' ' && cadena.charAt(i) != ','){
+                auxiliar = auxiliar + cadena.charAt(i);
+            }
+        }
+        return auxiliar;
+    }
+    /**
+     * 
+     * @param cadena el string a limpiar
+     * @return el string sin acentos
+     */
+    public String quitaAcentos ( String cadena){
+        // pájaro
+        // pajaro
+       // cadena = cadena.toLowerCase();
+        cadena = cadena.replace('á', 'a');
+        cadena = cadena.replace('é', 'e');
+        cadena = cadena.replace('í', 'i');
+        cadena = cadena.replace('ó', 'o');
+        cadena = cadena.replace('ú', 'u');
+        cadena = cadena.replace('ü', 'u');
+        
+        cadena = cadena.replace('Á', 'A');
+        cadena = cadena.replace('É', 'E');
+        cadena = cadena.replace('Í', 'I');
+        cadena = cadena.replace('Ó', 'O');
+        cadena = cadena.replace('Ú', 'U');
+        cadena = cadena.replace('Ü', 'U');
+        
+        return cadena;
+        
+    }
+    
+    public String quitaAcentosV2(String cadena){
+        String auxiliar = "";
+        for (int i=0; i < cadena.length(); i++){
+            if (cadena.charAt(i)== 'á'){auxiliar = auxiliar + 'a'; }
+            else if (cadena.charAt(i)== 'é'){auxiliar = auxiliar + 'e'; }
+            else if (cadena.charAt(i)== 'í'){auxiliar = auxiliar + 'i'; }
+            else if (cadena.charAt(i)== 'ó'){auxiliar = auxiliar + 'o'; }
+            else if (cadena.charAt(i)== 'ú'){auxiliar = auxiliar + 'u'; }
+            else if (cadena.charAt(i)== 'ü'){auxiliar = auxiliar + 'u'; }
+            
+            else if (cadena.charAt(i)== 'Á'){auxiliar = auxiliar + 'A'; }
+            else if (cadena.charAt(i)== 'É'){auxiliar = auxiliar + 'E'; }
+            else if (cadena.charAt(i)== 'Í'){auxiliar = auxiliar + 'I'; }
+            else if (cadena.charAt(i)== 'Ó'){auxiliar = auxiliar + 'O'; }
+            else if (cadena.charAt(i)== 'Ú'){auxiliar = auxiliar + 'U'; }
+            else if (cadena.charAt(i)== 'Ü'){auxiliar = auxiliar + 'U'; }
+            else {
                 auxiliar = auxiliar + cadena.charAt(i);
             }
         }
@@ -55,6 +104,7 @@ public class EjerciciosNivel01_2021 {
         //2º Pasamos a minúsculas toda la frase
         auxiliar2 = auxiliar2.toLowerCase();
         //3º Voy a usar el método de los dos índices
+        auxiliar2 = quitaAcentos(auxiliar2);
         int indiceIzquierdo = 0;
         int indiceDerecho = auxiliar2.length() - 1;
         
@@ -77,6 +127,7 @@ public class EjerciciosNivel01_2021 {
         //Este método devuelve true si la palabra no tiene ninguna letra repetida
         //y false si se repite alguna.
         palabra = palabra.toUpperCase();
+        palabra = quitaAcentos(palabra);
         for (int i=0; i< palabra.length(); i++){
             for (int j=i+1; j< palabra.length(); j++){
                 if( palabra.charAt(i) == palabra.charAt(j)){
