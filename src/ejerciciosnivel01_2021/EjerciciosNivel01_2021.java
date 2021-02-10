@@ -183,14 +183,15 @@ public class EjerciciosNivel01_2021 {
     * 
     */
     public String acronimo (String frase) {
+        frase = frase.toUpperCase();
         String [] palabras = divideFrase(frase);
         String auxiliar = "";
         for (int i=0; i< palabras.length; i++){
-            if (palabras[i].equals("y") || palabras[i].equals("e") || 
-                palabras[i].equals("de") || palabras[i].equals("la") || palabras[i].equals("las")){
-                
+            if (palabras[i].length() > 0){ //para evitar el problema de las palabras vacías
+            if (!(palabras[i].equals("Y") || palabras[i].equals("E") || palabras[i].equals("DE") || palabras[i].equals("LA") || palabras[i].equals("LAS"))){
+               auxiliar = auxiliar + palabras[i].charAt(0);
             }
-           auxiliar = auxiliar + palabras[i].charAt(0);
+            }
         }
         return auxiliar;
     }
