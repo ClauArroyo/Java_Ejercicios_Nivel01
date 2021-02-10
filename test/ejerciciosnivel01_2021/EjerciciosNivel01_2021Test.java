@@ -149,5 +149,35 @@ public class EjerciciosNivel01_2021Test {
 
     }
 
+    /**
+     * Test of divideFrase method, of class EjerciciosNivel01_2021.
+     */
+    @Test
+    public void testDivideFrase() {
+        System.out.println("divideFrase");
+        String frase = "";
+        EjerciciosNivel01_2021 instance = new EjerciciosNivel01_2021();
+        String[] expResult = null;
+        String[] result = instance.divideFrase(frase);
+        assertArrayEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of acronimo method, of class EjerciciosNivel01_2021.
+     */
+    @Test
+    public void testAcronimo() {
+        System.out.println("acronimo");
+        EjerciciosNivel01_2021 instance = new EjerciciosNivel01_2021();
+        assertEquals("AVE", instance.acronimo("Alta Velocidad Española"));
+        assertEquals("CdETyS", instance.acronimo("Centro de Estudios Tecnológicos y Sociales"));
+        assertEquals("CETYS", instance.acronimo("Centro de Estudios Tecnológicos y Sociales"));
+        assertEquals("UFV", instance.acronimo("Universidad Francisco de Vitoria"));
+
+    }
+
+    
     
 }

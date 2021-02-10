@@ -5,6 +5,8 @@
  */
 package ejerciciosnivel01_2021;
 
+import java.util.Arrays;
+
 /**
  *
  * @author xp
@@ -139,6 +141,59 @@ public class EjerciciosNivel01_2021 {
         //es porque la palabra no tiene letras repetidas
         return true;
     }
+    //EJERCICIOS JAVA NIVEL 01 PARTE 2: ACRÓNIMO
+    
+    /**
+    * Este método recibe un string formado por varias palabras
+    * por ejemplo "Alta Velocidad Española"
+    * y devuleve un array de Strings por ejemplo
+    * ("Alta" + "Velocidad" + "Española")
+    * ESTA VERSIÓN SOLO SE USARÁ EN LAS PRÁCTICAS
+    * NO EN LA VIDA REAL
+    */
+    public String[] divideFrase( String frase){
+        frase = frase + " ";
+        String auxiliar = "";
+        //1º Averiguamos cuántos espacios en blanco tiene la frase
+        int numeroEspaciosEnBlanco = 0;
+        for (int i=0; i< frase.length(); i++){
+            if (frase.charAt(i) == ' '){
+                numeroEspaciosEnBlanco++;
+            }
+        }
+        //+1 en número de espacios para que me coja la última palabra
+        String[] dividido = new String[numeroEspaciosEnBlanco];
+        int contadorPalabra = 0;
+        for (int i=0; i< frase.length(); i++){
+            if (frase.charAt(i) == ' '){
+               dividido[contadorPalabra] = auxiliar;
+                auxiliar = "";
+                contadorPalabra++;
+            }
+            else{
+                auxiliar = auxiliar + frase.charAt(i);
+            }
+        }
+        return dividido;
+    }
+    
+    /*
+    *recibe una frase y devuelve su acrónimo (la primera letra
+    * de cada palabra que forma la frase)
+    * 
+    */
+    public String acronimo (String frase) {
+        String [] palabras = divideFrase(frase);
+        String auxiliar = "";
+        for (int i=0; i< palabras.length; i++){
+            if (palabras[i].equals("y") || palabras[i].equals("e") || 
+                palabras[i].equals("de") || palabras[i].equals("la") || palabras[i].equals("las")){
+                
+            }
+           auxiliar = auxiliar + palabras[i].charAt(0);
+        }
+        return auxiliar;
+    }
     
     /**
      * @param args the command line arguments
@@ -154,6 +209,9 @@ public class EjerciciosNivel01_2021 {
         System.out.println("palindromo: " + ejercicio.esPalindromo("estonoes"));
         System.out.println("isograma: " + ejercicio.esIsograma("murcielago"));
         System.out.println("isograma: " + ejercicio.esIsograma("diccionario"));
+        
+        System.out.println( Arrays.toString ( ejercicio.divideFrase("Alta Velocidad Española")));
+        
     }
     
 }
