@@ -178,6 +178,36 @@ public class EjerciciosNivel01_2021Test {
 
     }
 
+    /**
+     * Test of esAnagrama method, of class EjerciciosNivel01_2021.
+     */
+    @Test
+    public void testEsAnagrama() {
+        System.out.println("esAnagrama");
+        EjerciciosNivel01_2021 instance = new EjerciciosNivel01_2021();
+        assertEquals(true, instance.esAnagrama("amor", "roma"));
+        assertEquals(false, instance.esAnagrama("", ""));
+        assertEquals(true, instance.esAnagrama("Claudia", "licuada"));
+        
+        assertEquals(true, instance.esAnagrama("Helios", "hielos"));
+        assertEquals(true, instance.esAnagrama("Nacionalista", "Altisonancia"));
+        assertEquals(false, instance.esAnagrama("kike", "aprobado"));
+        assertEquals(false, instance.esAnagrama("amorr", "romma"));
+
+    }
+
+    /**
+     * Test of main method, of class EjerciciosNivel01_2021.
+     */
+    @Test
+    public void testMain() {
+        System.out.println("main");
+        String[] args = null;
+        EjerciciosNivel01_2021.main(args);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
     
     
 }
