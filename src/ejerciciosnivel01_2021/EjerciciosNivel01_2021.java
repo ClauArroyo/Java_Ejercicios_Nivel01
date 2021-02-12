@@ -238,7 +238,7 @@ public class EjerciciosNivel01_2021 {
      * @param diasIniciales son los días con XX que hay que poner al principio
      */
     public void calendario (int diasIniciales){
-        diasIniciales = diasIniciales % 7;
+        diasIniciales = Math.abs(diasIniciales % 7); //para que si nos pasan un número mayor a 7 en diasIniciales o negativo funcione corerctamente
         //contador para saber qué día de la semana estoy imprimiendo
         int contador = 0;
        
@@ -287,7 +287,7 @@ public class EjerciciosNivel01_2021 {
         ejercicio.esAnagrama("roma", "amor");
         ejercicio.calendario(14);
         System.out.println();System.out.println();
-        ejercicio.calendario(545452);
+        ejercicio.calendario(0);
         System.out.println();System.out.println();
         
     }
