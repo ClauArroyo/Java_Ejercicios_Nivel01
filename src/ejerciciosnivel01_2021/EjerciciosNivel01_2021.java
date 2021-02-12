@@ -238,14 +238,33 @@ public class EjerciciosNivel01_2021 {
      * @param diasIniciales son los días con XX que hay que poner al principio
      */
     public void calendario (int diasIniciales){
-        //primera parte imprimir las XX
+        diasIniciales = diasIniciales % 7;
+        //contador para saber qué día de la semana estoy imprimiendo
+        int contador = 0;
+       
+        //primera parte imprimir las XX iniciales
         for (int i=0; i < diasIniciales; i++){
             System.out.print("XX ");
+            contador++;
         }
         
         //segunda fase: imprimir los números del 1 al 31
-        for (int i=1; i<5; i++){
-            System.out.print(i + " ");
+        for (int i=1; i<=31; i++){
+            if (i > 0 && i <10){
+                System.out.print("0" + i + " ");
+            }
+            else{
+                System.out.print(i + " ");
+            }
+            contador++;
+            if (contador % 7 == 0){
+                System.out.println("");
+            }
+        }
+        //3ª fase: dibujar las XX finales
+        while (contador % 7 != 0){
+            System.out.print("XX ");
+            contador++;
         }
     }
     
@@ -266,7 +285,10 @@ public class EjerciciosNivel01_2021 {
         
         System.out.println( Arrays.toString ( ejercicio.divideFrase("Alta Velocidad Española")));
         ejercicio.esAnagrama("roma", "amor");
-        ejercicio.calendario(3);
+        ejercicio.calendario(14);
+        System.out.println();System.out.println();
+        ejercicio.calendario(545452);
+        System.out.println();System.out.println();
         
     }
     
